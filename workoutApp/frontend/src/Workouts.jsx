@@ -21,7 +21,7 @@ const {user}=useAuthContext()
 
     const fetchData=()=>{
         setLoads(true)
-        const response=axios.get('http://localhost:4000/api/workouts',{
+        const response=axios.get('https://muscleflex.onrender.com/api/workouts',{
             headers:{
                 'Authorization':`Bearer ${user.token}`
             }
@@ -57,7 +57,7 @@ const {user}=useAuthContext()
 
     }
     const update=(id)=>{
-        axios.patch(`http://localhost:4000/api/workouts/${id}`,{title,reps,loads})
+        axios.patch(`https://muscleflex.onrender.com/api/workouts/${id}`,{title,reps,loads})
         .then(response => {
             console.log(response.data);
             fetchData();
@@ -72,7 +72,7 @@ const {user}=useAuthContext()
     }
     const deleteWorkout=(id)=>{
 
-        axios.delete(`http://localhost:4000/api/workouts/${id}`,{
+        axios.delete(`https://muscleflex.onrender.com/api/workouts/${id}`,{
 
       headers:{
         'Authorization':`Bearer ${user.token}`

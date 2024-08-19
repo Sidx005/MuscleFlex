@@ -12,7 +12,7 @@ const useSignup = () => {
         setError(null);
     
         try {
-            const response = await axios.post('http://localhost:4000/api/users/signup', { email, password });
+            const response = await axios.post('https://muscleflex.onrender.com/api/users/signup', { email, password });
             console.log(response.data); // Log the response
             setLoad(false);
             localStorage.setItem('user', JSON.stringify(response.data));

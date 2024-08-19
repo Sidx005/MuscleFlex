@@ -12,7 +12,7 @@ const login=async(email,password)=>{
     setLoad(true);
     setError(null);
     try{
- const response=await axios.post('http://localhost:4000/api/users/login',{email,password});
+ const response=await axios.post('https://muscleflex.onrender.com/api/users/login',{email,password});
  console.log(response.data);
  setLoad(false);
  localStorage.setItem('user',JSON.stringify(response.data));

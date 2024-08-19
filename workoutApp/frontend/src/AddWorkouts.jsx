@@ -23,7 +23,7 @@ const AddWorkouts = () => {
             return;
         }
 
-        axios.post('http://localhost:4000/api/workouts', 
+        axios.post('https://muscleflex.onrender.com/api/workouts', 
             { title, reps, load: loads }, 
             {
                 headers: {
