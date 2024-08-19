@@ -1,0 +1,22 @@
+Client(browser)         Server
+      /api/workouts
+JWT------------------> Server
+Used in 
+
+JWT token:
+1.Header
+2.Payload 
+3.Signature
+
+Header+Payload---------->Server
+    \  /                 |
+     V                   |
+    Secret               |
+                         |
+                         v
+                         identifies the unique string
+                         & generates a random unique string called Signature
+                         |
+             Client <----|
+              
+

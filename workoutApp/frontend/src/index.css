@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#nav a{
+    margin-left: 20px;
+    z-index: 999;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    transition: ease 0.5s;
+}
+#nav a:hover{
+background-color: orangered;
+}
+#nav{
+    backdrop-filter: blur(10px);
+    z-index: 999;
+background: rgba(0, 0, 0,.5);
+}
+#navlinks{
+    display: flex;
+}
+#navlinks::-webkit-scrollbar{
+    border-radius: 5px;
+
+}
+#navlinks::-webkit-scrollbar-thumb{
+    background-color: orangered;
+    border-radius: 20px;
+}
+#btn{
+    display: none;
+}
+@media(max-width:990px){
+    #btn{
+        display: block;
+        position: absolute;
+        right:5px;
+        top:2.5px;
+    }
+    #nav{
+        min-height: 15vh;
+    }
+
+    figure{
+        position: absolute;
+        top: 5px;
+        left:0
+        ;
+        
+        z-index: 1000;
+    }
+    figure img{
+        height: 20px;
+
+    }
+    #nav{
+        flex-direction: column;
+
+      }
+      #navlinks{
+        height: 0;
+        overflow: auto;
+        justify-content: center;
+        align-items: center;
+        /* flex-direction: column; */
+        transition: 0.5s ease all;
+        max-height: 170px;
+      }
+    #navlinks.active{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+margin-top: 10px;
+height: auto;
+max-height: 170px;
+text-align: center;
+gap: 0;
+padding-top: 50px;
+       /* min-height: 350px; */
+       overflow-y: auto;
+       width: 100%;
+
+    }
+    
+    #nav a{
+        /* margin: 20px; */
+        z-index: 999;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 20px;
+        transition: ease 0.5s;
+    }
+    
+}
+@media(max-width:798px){
+    .dragCircle{
+        display: none;
+    }
+}
+.footer li:hover{
+text-decoration: underline;
+}
+.service-cards{
+    position: relative;
+    overflow: hidden;
+}
+.service-cards::after{
+content: '';
+height: 100%;
+width: 100%;
+background:rgba(0, 0, 0,.5);
+position: absolute;
+top: 0;
+left: 0;
+transform: translateY(200px);
+transition: all 0.5s ease;
+opacity: 0;
+font-weight: bold;
+}
+.service-cards:hover::after{
+    opacity:1;
+    transform: translateY(0);
+}
+.dragCircle{
+    background-image: linear-gradient(to bottom,crimson,orangered);
+    filter: blur(25px);
+    cursor:move;
+    z-index: 99;
+}
+.service-cards:first-child::after{
+content: 'Workout Planner';
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+}
+.service-cards:nth-child(2)::after{
+content: 'StopWatch';
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+}
+.service-cards:nth-child(3)::after{
+content: 'AI Guide';
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+}
+
+#signin,#login{
+    position: relative;
+    border: 2px solid black ;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#signin button,#login button{
+    background-color: orange;
+    border: 1px solid black;
+}
+#signin input,#login input{
+    border: 1px solid black;
+}
+#signin:before,#login:before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: orangered;
+right: -20px;  
+border-radius: 5px;
+  z-index: -1;
+}
