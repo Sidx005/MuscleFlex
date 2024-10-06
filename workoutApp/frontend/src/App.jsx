@@ -25,14 +25,14 @@ const {user}=useAuthContext()
         <div className='h-[10vh] p-[5%]'></div>
         <Routes>
           <Route path="/" element={
-            user ?
+            
             <>
             <Hero />
           <Services/>
           <Cards/>
-            </>:<Navigate to={'/login'}/>} />
-          <Route path='/workouts' element={<Workouts/>} />
-          <Route path='/addWorkouts' element={<AddWorkouts/>} />
+            </>} />
+          <Route path='/workouts' element={user?<Workouts/>:<Navigate to={'/login'}/>} />
+          <Route path='/addWorkouts' element={user?</Route><AddWorkouts/>:<Navigate to={'/login'}/>} />
           
 <Route path='/watch' element={<StopWatch/>}/>
 <Route path='/login' element={!user?<LoginForm/>:<Navigate to={'/'}/>}/>
