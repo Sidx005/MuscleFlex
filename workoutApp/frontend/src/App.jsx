@@ -25,7 +25,7 @@ const {user}=useAuthContext()
         <div className='h-[10vh] p-[5%]'></div>
         <Routes>
           <Route path="/" element={
-            
+          
             <>
             <Hero />
           <Services/>
